@@ -2,7 +2,6 @@ package gb.catch_the_drop;
 
 
 import java.awt.Dimension;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,14 +21,7 @@ public class Score extends JFrame {
 // Start reading
     public static void Reader() throws IOException {
         people.clear();
-//        System.getProperty("user.dir");
-//        Score.class.getResource("/Score.txt");
-//        System.out.println(new File("./Score.txt").getCanonicalPath());
-//        File score = new File(new File("./Score.txt").getCanonicalPath());
-//        System.out.println(score);
-        FileReader fr= new FileReader("/Users/andreizhyunou/IdeaProjects/GeekBrains/Catch_the_drop/src/gb/catch_the_drop/Score.txt");
-//        FileReader fr= new FileReader(System.getProperty("user.dir")+"/src/gb/catch_the_drop/Score.txt");
-//        FileReader fr= new FileReader(score);
+       FileReader fr= new FileReader(StartGame.currentDir+"/src/gb/catch_the_drop/Score.txt");
         Scanner scan = new Scanner(fr);
         while (scan.hasNextLine()) {
             people.add(Integer.valueOf(scan.nextLine()));
@@ -42,8 +34,7 @@ public class Score extends JFrame {
     public static void Writer() {
         FileWriter nFile = null;
         try {
-//            nFile = new FileWriter("/Users/andreizhyunou/IdeaProjects/GeekBrains/Catch_the_drop/src/gb/catch_the_drop/Score.txt");
-            nFile = new FileWriter("./src/gb/catch_the_drop/Score.txt");
+            nFile = new FileWriter(StartGame.currentDir+"/src/gb/catch_the_drop/Score.txt");
 
         } catch (IOException e) {
             e.printStackTrace();

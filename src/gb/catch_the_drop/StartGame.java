@@ -11,6 +11,7 @@ public class StartGame extends JFrame{
 
     private static Image background_st;
     private static StartGame start_game;
+    public static String currentDir = System.getProperty("user.dir");
 
 
     public static void Start_menu() throws IOException {
@@ -27,8 +28,8 @@ public class StartGame extends JFrame{
                 int x2 = k.getX();
                 int y2 = k.getY();
                 boolean is_start = x2 > 180 && x2 < 750 && y2 > 85 && y2 < 208;
-                boolean is_start2 = x2 > 210 && x2 < 736 && y2 > 250 && y2 < 373;;
-                boolean is_start3 = x2 > 335 && x2 < 560 && y2 > 380 && y2 < 415;;
+                boolean is_start2 = x2 > 210 && x2 < 736 && y2 > 250 && y2 < 373;
+                boolean is_start3 = x2 > 335 && x2 < 560 && y2 > 380 && y2 < 415;
                 if (is_start) {
                     try {
                         Music.PlayClickSound();
